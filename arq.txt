@@ -1,0 +1,24 @@
+Reading a file line by line.
+--------------------------------------------
+I love programming in C.
+Learning programming on Codeforwin is easy.
+
+aaaaaa
+a
+12
+ 
+.
+
+
+
+
+
+
+
+.
+
+
+
+
+
+

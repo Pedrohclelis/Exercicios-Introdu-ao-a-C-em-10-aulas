@@ -6,22 +6,23 @@
 
 int main(){
 	setlocale(LC_ALL,"");
-	char data[1024];
-	FILE *f;
+	char ch;
 	
-	f = fopen("arq.txt", "w");
+	FILE* f;
+	f = fopen("arq.txt", "r");
 	if (f == NULL){
 		printf("Error");
 		exit(1);
 	}
 	
-	printf("Enter content to store in file: ");
-	fgets(data, sizeof(data), stdin);
+	printf("File opened successfully. Reading file contents character by character. \n\n");
 	
-	fputs(data, f);
+	do {
+		ch = fgetc(f);
+		putchar(ch);
+	} while (!feof(f));
 	
 	fclose(f);
-	printf("File succesfully created", data);
 
 	return 0;
 }
