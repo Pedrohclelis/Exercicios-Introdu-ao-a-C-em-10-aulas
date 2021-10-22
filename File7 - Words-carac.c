@@ -3,31 +3,33 @@
 #include <locale.h>
 #include <math.h>
 
-
 int main(){
 	setlocale(LC_ALL,"");
+	int words=1, carac=0;
 	char ch;
 	
 	FILE* f;
 	f = fopen("arq.txt", "r");
 	if (f == NULL){
-		printf("Error");
+		printf("ERRO");
 		exit(1);
 	}
 	
-	printf("File opened successfully. Reading file contents character by character:\n");
-	
-	do {
-		if (feof(f)){
-			break;
+	ch = fgetc(f);
+	while (ch != EOF) {
+		putchar(ch);
+	   	if (ch == ' ' || ch == '\n') {
+			words++;
+		} else{
+			carac++;
 		}
 		ch = fgetc(f);
-		putchar(ch);
-	} while (1);
+	}
+	
+	printf("\n\nWords: %i\n", words);
+	printf("Caracters: %i", carac);
 	
 	
 	
-	fclose(f);
-
 	return 0;
 }

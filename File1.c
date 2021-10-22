@@ -7,20 +7,20 @@
 int main(){
 	setlocale(LC_ALL,"");
 	char ch;
+	char str[1024];
 	
 	FILE* f;
-	f = fopen("arq.txt", "r");
+	f = fopen("arq.txt", "w");
 	if (f == NULL){
 		printf("Error");
 		exit(1);
 	}
 	
-	printf("File opened successfully. Reading file contents character by character. \n\n");
+	printf("File opened successfully. Write some text. \n\n");
 	
-	do {
-		ch = fgetc(f);
-		putchar(ch);
-	} while (!feof(f));
+	fgets(str, sizeof(str), stdin);
+	fprintf(f, "%s", str);
+	
 	
 	fclose(f);
 

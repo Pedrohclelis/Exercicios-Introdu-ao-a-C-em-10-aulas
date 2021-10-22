@@ -1,0 +1,35 @@
+>>> Cad numero 0
+Placa: onix
+Marca: onxsss
+Modelo: velkho
+Ar Condicionado: n
+Ano de FabricacÃ£o: 1994
+Quilometragem: 30000
+NÃºmero de portas: 2
+
+>>> Cad numero 0
+Placa: aoba
+Marca: rovb
+Modelo: a34
+Ar Condicionado: n
+Ano de FabricaÃ§Ã£o: 3434
+Quilometragem: 34
+NÃºmero de portas: 3
+
+>>> Cad numero 0
+Placa: test
+Marca: m
+Modelo: mod
+Ar Condicionado: s
+Ano de Fabricaçao: 3003
+Quilometragem: 2
+Número de portas: -1308622413
+
+>>> Cad numero 0
+Placa: totos
+Marca: tok
+Modelo: etk
+Ar Condicionado: n
+Ano de Fabricaçao: 34
+Quilometragem: 4
+Número de portas: 3

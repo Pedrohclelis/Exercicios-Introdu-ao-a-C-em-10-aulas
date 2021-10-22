@@ -1,24 +1,16 @@
-Reading a file line by line.
---------------------------------------------
-I love programming in C.
-Learning programming on Codeforwin is easy.
+test line 1a
+bbbbbbbbbbbcd
+test line 3c
+test line 4d
+1a
+2b
+3c
 
-aaaaaa
-a
-12
- 
-.
+h1
+h2
 
-
-
-
-
-
-
-.
-
-
-
-
-
-
+p
+e
+d
+r
+oo

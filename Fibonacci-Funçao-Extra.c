@@ -2,25 +2,26 @@
 #include <stdlib.h>
 #include <locale.h>
 
-int fatorial(int num){
-	int i, resp=1;
-	if (num < 0){
-		resp = 0;
-	} else{
-		for(i=1; i<=num; i++){
-		resp *= i;
-		}
-	} return resp;
-	
+float f(int n){
+	if (n<=1){
+		return 2;
+	}
+	else{
+		return (float)1 / (3-(f(n-1))) ;		
+	} 
 }
 
 int main(){
 	setlocale(LC_ALL,"");
-	int num;
+	float num;
 	
-	printf("Digite um numero: ");
-	scanf("%i", &num);
-	printf("Seu fat é %i", fatorial(num));
+	while (1){
+		printf("\nDigite um numero: ");
+		scanf("%f", &num);
+		printf("f(%.2f) = %f", num, f(num));
+			
+	}
+
 	return 0;
 }
 
