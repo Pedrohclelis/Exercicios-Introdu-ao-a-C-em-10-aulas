@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <string.h>
 
 /*
 Pedro Henrique Cometti Lelis
 RA 156.341
+Exercicio 2
 */
 
 struct dados{
@@ -25,9 +27,9 @@ int main(){
 	printf("===========> CADASTRAR PRODUTOS <===========\n\n");
 	printf("Digite a quantidade de cadastros desejada: ");
 	scanf("%s", tamS);
-	//Verificação para passar somente numeros no 'tam'
+	//VerificaÃ§Ã£o para passar somente nÃºmeros no 'tam'
 	while (atoi(tamS) == 0){
-		printf("ERRO: '%s' nao é um numero valido. Digite a quantidade de cadastros desejada: ", tamS);
+		printf("ERRO: '%s' nÃ£o Ã© um nÃºmero valido. Digite a quantidade de cadastros desejada: ", tamS);
 		scanf("%s", tamS);
 	}
 	tam = atoi(tamS);
@@ -44,7 +46,7 @@ int main(){
 		scanf("%i", &Dado[i].quantidadeVendida);
 		printf("[%i] Comprador: ", i+1);
 		scanf("%s", &Dado[i].comprador);
-		printf("[%i] Mês da venda: ", i+1);
+		printf("[%i] MÃªs da venda: ", i+1);
 		scanf("%i", &Dado[i].mesVenda);
 		printf("\n");
 	}*/
@@ -78,18 +80,17 @@ int main(){
 
 	//Menu inicial
 	do{
-		
 		printf("===========> MENU INICIAL <===========\n\n");
-		printf("1) Total de vendas num dado mês (de todos os produtos)\n");
-		printf("2) Total de vendas de um determinado produto num dado mês para um determinado cliente (qual produto, para quem e em que mês)\n");
+		printf("1) Total de vendas num dado mÃªs (de todos os produtos)\n");
+		printf("2) Total de vendas de um determinado produto num dado mÃªs para um determinado cliente (qual produto, para quem e em que mÃªs)\n");
 		printf("3) Total de vendas de cada produto (em todos os meses)\n");
 		printf("4) Total vendido para cada cliente\n");
 		printf("5) Sair\n\n");
 		printf(">>> Sua resposta: ");
-		scanf("%s", &cmdS);
-		//Verificação para passar somente numeros no 'cmd'
+		scanf("%s", cmdS);
+		//VerificaÃ§Ã£o para passar somente nÃºmeros no 'cmd'
 		while (atoi(cmdS) == 0){
-			printf("ERRO: '%s' nao é um numero valido.\n", cmdS);
+			printf("ERRO: '%s' nÃ£o Ã© um nÃºmero valido.\n", cmdS);
 			printf(">>> Sua resposta: ");
 			scanf("%s", cmdS);
 		}
@@ -100,16 +101,15 @@ int main(){
 				system("clear||cls");
 				total = 0;
 				
-				//Algoritmo pra pegar o mes das compras. Validando somente numeros inteiros, e que sejam entre 1 a 12
-				int mesok=0;
-				printf("===========> BUSCA POR MÊS <===========\n\n");
+				//Algoritmo pra pegar o mes das compras. Validando somente nÃºmeros inteiros, e que sejam entre 1 a 12
+				printf("===========> BUSCA POR MÃªs <===========\n\n");
 				mesok=0;
 				do{
-					printf("Mês: ");
-					scanf("%s", &mesS);
+					printf("MÃªs: ");
+					scanf("%s", mesS);
 					while (atoi(mesS) == 0){
-						printf("ERRO: '%s' nao é um numero valido.\n", mesS);
-						printf("Mês: ");
+						printf("ERRO: '%s' nÃ£o Ã© um nÃºmero valido.\n", mesS);
+						printf("MÃªs: ");
 						scanf("%s", mesS);
 					}
 					mes = atoi(mesS);
@@ -118,13 +118,13 @@ int main(){
 						mesok = 1;
 						break;
 					default:
-						printf("ERRO: '%i' nao é um mês valido! Digite um mês entre 1 e 12.\n", mes);
+						printf("ERRO: '%i' nÃ£o Ã© um mÃªs valido! Digite um mÃªs entre 1 e 12.\n", mes);
 						break;
 					}
 				} while(mesok == 0);
 				
 				//Verifica cada 'Dado' 
-				printf("\nMês \t Qtde \t Produto \t Comprador\n");
+				printf("\nMÃªs \t Qtde \t Produto \t Comprador\n");
 				for(i=0; i<tam; i++){
 					if (Dado[i].mesVenda == mes){
 						printf("%i \t %i \t %s \t\t %s\n", Dado[i].mesVenda, Dado[i].quantidadeVendida, Dado[i].nomeProduto, Dado[i].comprador);
@@ -134,7 +134,7 @@ int main(){
 				
 				//Resultados
 				printf("------------------------------------------\n");
-				printf("> Total de vendas no %iº mês: %i\n\n", mes, total);
+				printf("> Total de vendas no %iÂº mÃªs: %i\n\n", mes, total);
 				
 				break;
 			case 2:
@@ -142,18 +142,18 @@ int main(){
 				total = 0;
 				
 				//Pega os dados
-				printf("===========> BUSCA POR PRODUTO, MES, E COMPRADOR <===========\n\n");
+				printf("===========> BUSCA POR PRODUTO, MÃŠS, E COMPRADOR <===========\n\n");
 				printf("Nome do produto: ");
 				scanf("%s", produto);
 				
-				//Algoritmo pra pegar o mes das compras. Validando somente numeros inteiros, e que sejam entre 1 a 12
+				//Algoritmo pra pegar o mes das compras. Validando somente nÃºmeros inteiros, e que sejam entre 1 a 12
 				mesok=0;
 				do{
-					printf("Mês: ");
-					scanf("%s", &mesS);
+					printf("MÃªs: ");
+					scanf("%s", mesS);
 					while (atoi(mesS) == 0){
-						printf("ERRO: '%s' nao é um numero valido.\n", mesS);
-						printf("Mês: ");
+						printf("ERRO: '%s' nÃ£o Ã© um nÃºmero valido.\n", mesS);
+						printf("MÃªs: ");
 						scanf("%s", mesS);
 					}
 					mes = atoi(mesS);
@@ -162,7 +162,7 @@ int main(){
 						mesok = 1;
 						break;
 					default:
-						printf("ERRO: '%i' nao é um mês valido! Digite um mês entre 1 e 12.\n", mes);
+						printf("ERRO: '%i' nÃ£o Ã© um MÃªs valido! Digite um MÃªs entre 1 e 12.\n", mes);
 						break;
 					}
 				} while(mesok == 0);
@@ -170,7 +170,7 @@ int main(){
 				printf("Nome do cliente comprador: ");
 				scanf("%s", nome);
 				
-				printf("\nMês \t Qtde \t Produto \t Comprador\n");
+				printf("\nMÃªs \t Qtde \t Produto \t Comprador\n");
 				for(i=0; i<tam; i++){
 					if (Dado[i].mesVenda == mes && strcmp(Dado[i].nomeProduto, produto) == 0 && strcmp(Dado[i].comprador, nome) == 0){
 						printf("%i \t %i \t %s \t\t %s\n", Dado[i].mesVenda, Dado[i].quantidadeVendida, Dado[i].nomeProduto, Dado[i].comprador);
@@ -180,7 +180,7 @@ int main(){
 				
 				//Resultados
 				printf("------------------------------------------\n");
-				printf("> Total de vendas do produto '%s' no %iº mês para o cliente '%s': %i\n\n", produto, mes, nome, total);
+				printf("> Total de vendas do produto '%s' no %iÂº mÃªs para o cliente '%s': %i\n\n", produto, mes, nome, total);
 				
 				break;
 			case 3:
@@ -190,10 +190,10 @@ int main(){
 				//Pega o nome do produto
 				printf("===========> BUSCA POR PRODUTO <===========\n\n");
 				printf("Nome do produto: ");
-				scanf("%s", &produto);
+				scanf("%s", produto);
 				
 				//Verifica cada 'Dado' 
-				printf("\nMês \t Qtde \t Produto \t Comprador\n");
+				printf("\nMÃªs \t Qtde \t Produto \t Comprador\n");
 				for (i=0; i<tam; i++){
 					if(strcmp(Dado[i].nomeProduto, produto) == 0){
 						printf("%i \t %i \t %s \t\t %s\n", Dado[i].mesVenda, Dado[i].quantidadeVendida, Dado[i].nomeProduto, Dado[i].comprador);
@@ -204,7 +204,7 @@ int main(){
 				//Resultados
 				printf("------------------------------------------\n");
 				if (total == 0){
-					printf("> Desculpe, nao há vendas cadastradas para o produto '%s'.\n\n", produto);
+					printf("> Desculpe, nÃ£o hÃ¡ vendas cadastradas para o produto '%s'.\n\n", produto);
 				} else{
 					printf("> Total vendido acerca do produto '%s': %i\n\n", produto, total);
 				}
@@ -220,7 +220,7 @@ int main(){
 				scanf("%s", nome);
 				
 				//Verifica cada 'Dado' 
-				printf("\nMês \t Qtde \t Produto \t Comprador\n");
+				printf("\nMÃªs \t Qtde \t Produto \t Comprador\n");
 				for (i=0; i<tam; i++){
 					if(strcmp(Dado[i].comprador, nome) == 0){
 						printf("%i \t %i \t %s \t\t %s\n", Dado[i].mesVenda, Dado[i].quantidadeVendida, Dado[i].nomeProduto, Dado[i].comprador);
@@ -231,7 +231,7 @@ int main(){
 				//Resultados
 				printf("------------------------------------------\n");
 				if (total == 0){
-					printf("> Desculpe, nao há compras cadastradas para o cliente de nome '%s'.\n\n", nome);
+					printf("> Desculpe, nÃ£o hÃ¡ compras cadastradas para o cliente de nome '%s'.\n\n", nome);
 				} else{
 					printf("> Total vendido para o cliente '%s': %i\n\n", nome, total);
 				}
@@ -242,7 +242,7 @@ int main(){
 				break;
 			default:
 				system("clear||cls");
-				printf("> ERRO: %i nao é uma opçao valida!\n\n", cmd);
+				printf("> ERRO: %i nÃ£o Ã© uma opÃ§Ã£o valida!\n\n", cmd);
 				break;
 		}
 	} while (cmd!=5);
